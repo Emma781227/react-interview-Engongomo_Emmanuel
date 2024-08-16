@@ -1,0 +1,256 @@
+/* Reset basic styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://www.shutterstock.com/image-vector/cinema-film-strip-wave-reel-600nw-1484469773.jpg');
+  background-size: cover;
+  background-position: center; 
+  filter: blur(1px); 
+  z-index: -1; 
+}
+
+/* Container styling */
+.app {
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/mystery-movie-poster-template-design-e5e45559f268e4d20bafd48643b6f8ef_screen.jpg?ts=1637000114'); /* Add this line */
+  background-size: cover; 
+  background-position:center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+/* Filter section */
+.filter {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.filter h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.filter label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+.Categories{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* Movie container and cards */
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1400px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.movie-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1 1 calc(33.333% - 32px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  /* background-image: url(${movie.background}); */
+  /* background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/mystery-movie-poster-template-design-e5e45559f268e4d20bafd48643b6f8ef_screen.jpg?ts=1637000114'); */
+  flex-direction: column;
+  margin-bottom: 16px;
+  overflow: hidden;
+ 
+}
+
+.movie-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.movie-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.movie-category {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+/* Gauge styling */
+.gauge {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  height: 10px;
+  margin-bottom: 8px;
+  /* position: relative; */
+  overflow: hidden;
+}
+
+.gauge-bar {
+  height: 100%;
+  background-color: #4caf50;
+  /* border-radius: 4px; */
+}
+p{
+  color: white;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-right: 8px;
+  position: relative;
+  display: inline-flex;
+}
+
+
+button:last-child {
+  margin-right: 0; /* Remove the right margin for the last button */
+}
+
+.like-button {
+  background-color: #4caf50;
+  color: #fff;
+  margin-top: auto;
+  max-width: 70px;
+
+}
+
+.like-button:hover {
+  background-color: #027307;
+}
+
+.dislike-button {
+  background-color: #f44336;
+  color: #fff;
+  margin-top: 5px;
+  top: -37px;
+  max-width: 70px;
+  margin-left: 100px;
+  /* align-self :flex-end; */
+
+}
+
+.dislike-button:hover {
+  background-color: #df0906;
+}
+
+
+.delete-button {
+  background-color: #130100;
+  color: #fff;
+  margin-top: 6px;
+  align-self :flex-end;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+}
+
+/* Pagination controls */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+ label {
+  font-size: 24px;
+  margin-bottom: 10px;
+  /* padding-bottom: 30px; */
+}
+
+select {
+  margin-left: 8px;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+}
+
+.pagination-controls .previous:hover{
+  background-color: #cdcbcb;
+  transition-duration: 0.5s;
+}
+
+.pagination-controls .next:hover{
+  background-color: #8e8e8e;
+  transition-duration: 0.5s;
+}
+
+.pagination-controls .next:active{
+  color: white;
+  background-color: #666;
+}
+
+.pagination-controls .previous:active{
+  color: white;
+  background-color: #666;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .movie-card {
+    flex: 1 1 calc(50% - 32px); /* Two cards per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card {
+    flex: 1 1 100%; /* One card per row */
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pagination-controls label, .pagination-controls button {
+    margin-bottom: 8px;
+  }
+}
